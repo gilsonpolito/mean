@@ -1,0 +1,31 @@
+cd /opt/Projetos/
+mkdir Mean
+cd Mean
+mkdir capitulo02
+cd capitulo02/
+nano node-server.js
+node node-server.js
+git init
+git add capitulo02/node-server.js
+git config --global user.name "Gilson Polito"
+git config --global user.email "gilsonpolito@gmail.com"
+git commit -m "Primeiro servidor"
+git remote add origin https://github.com/gilsonpolito/mean.git
+git push origin master
+cd capitulo02/
+mkdir -p contatooh/app/controllers
+mkdir -p contatooh/app/models
+mkdir -p contatooh/app/routes
+mkdir -p contatooh/app/views
+mkdir -p contatooh/config
+mkdir -p contatooh/public
+cd contatooh/
+npm init
+npm install express@4.8 --save
+nano config/express.js
+nano server.js
+nano config/express.js
+nano public/index.html
+npm install ejs@0.8 --save
+sudo npm install nodemon -g
+nodemon server.js --para não precisar ficar reiniciando o server
