@@ -1,0 +1,5 @@
+sudo npm install bower@1.3 -g
+bower init
+bower install angular#1.3 --save
+rm bower_components/ -R
+bower install
