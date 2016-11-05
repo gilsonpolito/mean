@@ -1,0 +1,2 @@
+bower install angular-resource#1.3 --save
+
