@@ -1,0 +1,8 @@
+npm install mongodb@1.4 --save
+
+node consulta
+
+npm install mongoose@3.8 --save
+
+npm install body-parser@1.6 method-override@2.1 --save
+npm install express@4.8 --save
