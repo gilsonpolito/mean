@@ -29,3 +29,6 @@ nano public/index.html
 npm install ejs@0.8 --save
 sudo npm install nodemon -g
 nodemon server.js --para não precisar ficar reiniciando o server
+
+#sincronizar com o git
+git pull origin master

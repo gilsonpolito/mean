@@ -3,88 +3,88 @@ mongo
 show dbs
 use contatooh
 db
-var contato = {"nome": "Nome do Contato"}
-db.contatos.insert(contato)
-show dbs
-show collections
-db.contatos.find()
-db.dropDatabase()
-use contatooh
-var contato1 = {"nome" : "Contato 1 Mongo", "email" : "cont1@empresa.com.br"}
-var contato2 = {"nome" : "Contato 2 Mongo", "email" : "cont2@empresa.com.br"}
-var contato3 = {"nome" : "Contato 3 Mongo", "email" : "cont3@empresa.com.br"}
-db.contatos.insert(contato1)
-db.contatos.insert(contato2)
-db.contatos.insert(contato3)
-db.contatos.insert(contato4)
-db.contatos.find()
-var contatos = db.contatos.find()
-contatos
-var contatos = db.contatos.find()
-contatos.next()
-contatos.next()
-contatos.next()
-contatos.next()
+var contato = {"nome": "Nome do Contato"};
+db.contatos.insert(contato);
+show dbs;
+show collections;
+db.contatos.find();
+db.dropDatabase();
+use contatooh;
+var contato1 = {"nome" : "Contato 1 Mongo", "email" : "cont1@empresa.com.br"};
+var contato2 = {"nome" : "Contato 2 Mongo", "email" : "cont2@empresa.com.br"};
+var contato3 = {"nome" : "Contato 3 Mongo", "email" : "cont3@empresa.com.br"};
+db.contatos.insert(contato1);
+db.contatos.insert(contato2);
+db.contatos.insert(contato3);
+db.contatos.insert(contato4);
+db.contatos.find();
+var contatos = db.contatos.find();
+contatos;
+var contatos = db.contatos.find();
+contatos.next();
+contatos.next();
+contatos.next();
+contatos.next();
 
-db.contatos.findOne()
-var contato = db.contatos.findOne()
-contato.next()
-contato
-contato
-var criterio = {"email" : "cont2@empresa.com.br"}
-var contato = db.contatos.find(criterio)
-contato
-var criterio = {"nome" : /tato/i}
-var contato = db.contatos.find(criterio)
-contato
+db.contatos.findOne();
+var contato = db.contatos.findOne();
+contato.next();
+contato;
+contato;
+var criterio = {"email" : "cont2@empresa.com.br"};
+var contato = db.contatos.find(criterio);
+contato;
+var criterio = {"nome" : /tato/i};
+var contato = db.contatos.find(criterio);
+contato;
 
-db.contatos.count()
-db.contatos.count({"nome" : /to 2/i })
+db.contatos.count();
+db.contatos.count({"nome" : /to 2/i });
 
-var contatoComEmails = { "nome" : "Contato com emails", "emails" : ["contato@email.com.br", "pessoal@empresa.com.br"]}
-db.contatos.insert(contatoComEmails)
-db.contatos.find({"emails" : "pessoal@empresa.com.br"})
+var contatoComEmails = { "nome" : "Contato com emails", "emails" : ["contato@email.com.br", "pessoal@empresa.com.br"]};
+db.contatos.insert(contatoComEmails);
+db.contatos.find({"emails" : "pessoal@empresa.com.br"});
 
-db.contatos.find({ "$or" : [ { "email" : "cont2@empresa.com.br" }, { "nome" : "Contato 1 Mongo" }]})
-db.contatos.find({ "email" : { "$ne" : "cont2@empresa.com.br" } })
+db.contatos.find({ "$or" : [ { "email" : "cont2@empresa.com.br" }, { "nome" : "Contato 1 Mongo" }]});
+db.contatos.find({ "email" : { "$ne" : "cont2@empresa.com.br" } });
 
-db.contatos.ensureIndex({"email" : 1})
-db.contatos.getIndexes()
-db.contatos.dropIndex("email_1")
-db.contatos.getIndexes()
-db.contatos.ensureIndex({"email" : 1},{unique: true})
-db.contatos.getIndexes()
+db.contatos.ensureIndex({"email" : 1});
+db.contatos.getIndexes();
+db.contatos.dropIndex("email_1");
+db.contatos.getIndexes();
+db.contatos.ensureIndex({"email" : 1},{unique: true});
+db.contatos.getIndexes();
 
-db.contatos.find({},{"nome":1})
-db.contatos.find({},{"nome":1, _id:0})
+db.contatos.find({},{"nome":1});
+db.contatos.find({},{"nome":1, _id:0});
 
-db.contatos.remove({"email" : "cont1@empresa.com.br"})
-db.contatos.find()
+db.contatos.remove({"email" : "cont1@empresa.com.br"});
+db.contatos.find();
 
-var criterio = {"email" : "cont3@empresa.com.br"}
-var contato = db.contatos.findOne(criterio)
-contato
-contato.nome = "Nome Alterado"
-var contato = db.contatos.findOne(criterio)
-contato
-contato.nome = "Nome Alterado"
-db.contatos.update(criterio, contato)
+var criterio = {"email" : "cont3@empresa.com.br"};
+var contato = db.contatos.findOne(criterio);
+contato;
+contato.nome = "Nome Alterado";
+var contato = db.contatos.findOne(criterio);
+contato;
+contato.nome = "Nome Alterado";
+db.contatos.update(criterio, contato);
 
-var contato4 = {"nome" : "Contato 4 Mongo", "email" : "cont4@empresa.com.br"}
-db.contatos.update({"nome" : /4/}, contato4, true)
-db.contatos.find()
+var contato4 = {"nome" : "Contato 4 Mongo", "email" : "cont4@empresa.com.br"};
+db.contatos.update({"nome" : /4/}, contato4, true);
+db.contatos.find();
 
-db.contatos.update({"nome" : /2/}, {"email" : "somudei@email.com"})
-db.contatos.find()
+db.contatos.update({"nome" : /2/}, {"email" : "somudei@email.com"});
+db.contatos.find();
 
-db.contatos.update({"email" : "cont4@empresa.com.br"}, {"$set":{"nome":"Mais uma alteração"}})
-db.contatos.find()
+db.contatos.update({"email" : "cont4@empresa.com.br"}, {"$set":{"nome":"Mais uma alteração"}});
+db.contatos.find();
 
 var contato = db.contatos.findOne({"email" : /cont2/ });
 var emergencia = db.contatos.findOne({"email" : /cont3/ });
 contato.emergencia = emergencia;
 db.contatos.update({"_id":contato._id},contato);
-db.contatos.find()
+db.contatos.find();
 
 var contato = db.contatos.findOne({"email" : /cont2/ });
 contato;
@@ -95,4 +95,23 @@ db.contatos.update({"_id": emergencia._id}, emergencia);
 db.contatos.findOne({"email" : /cont2/ });
 
 
-6.20
+var contato = db.contatos.findOne({"email" : /cont2/ });
+var emergencia = db.contatos.findOne({"email" : /cont3/ });
+contato.emergencia = emergencia._id;
+db.contatos.update({"_id":contato._id},contato);
+db.contatos.find();
+
+contato = db.contatos.findOne({"_id" : contato._id });
+emergencia = db.contatos.findOne({"_id" : contato.emergencia });
+
+contato.emergencia = { "$ref" : "contatos",  "$id" : emergencia._id};
+db.contatos.update({"_id":contato._id},contato);
+contato = db.contatos.findOne({"_id" : contato._id });
+contato.emergencia;
+
+function refResolver(ref) {
+	return db[ref.$ref].findOne({"_id":ref.$id})
+}
+
+
+var emergencia = refResolver(contato.emergencia);
