@@ -27,13 +27,10 @@ module.exports = function() {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
-	app.use(helmet());
-	app.disable('x-powered-by');
-	app.use(helmet.hidePoweredBy({ setTo: 'PHP 5.5.14' }));
 	app.use(helmet.xframe());
 	app.use(helmet.xssFilter());
 	app.use(helmet.nosniff());
-	
+	app.disable('x-powered-by');
 
 	load('models', {cwd: 'app'})
 		.then('controllers')
